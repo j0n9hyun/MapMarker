@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+function HomeBanner() {
+  return <BannerContainer>Map Marker</BannerContainer>;
+}
 const BannerContainer = styled.div`
   font-weight: bold;
   display: inline-block;
@@ -7,9 +10,5 @@ const BannerContainer = styled.div`
   margin: 20px;
   cursor: pointer;
 `;
-
-function HomeBanner() {
-  return <BannerContainer>Map Marker</BannerContainer>;
-}
 
 export default HomeBanner;

@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
-import HomeSearchList from './HomeSearchList';
 
 function HomeSearch({ searchPlaces }: any) {
   const [value, setValue] = useState('');
@@ -13,6 +12,7 @@ function HomeSearch({ searchPlaces }: any) {
   const onChangeSearch = (e: any) => {
     setValue(e.target.value);
   };
+
   return (
     <>
       <form onSubmit={onSubmit}>
@@ -31,13 +31,12 @@ function HomeSearch({ searchPlaces }: any) {
         </SearchWrapper>
       </form>
       <FavoriteButton>즐겨찾기</FavoriteButton>
-      <HomeSearchList />
     </>
   );
 }
 
 const FavoriteButton = styled.div`
-  border: 1px solid red;
+  margin: 20px 0;
 `;
 
 const SearchWrapper = styled.div`

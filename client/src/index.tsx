@@ -10,6 +10,18 @@ const GlobalStyles = createGlobalStyle`
     * {
       box-sizing: border-box;
       font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+      &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #a1a1a1; /*스크롤바의 색상*/
+    background-clip: padding-box;
+    border: 3px solid transparent;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
     }
 `;
 ReactDOM.render(
