@@ -17,6 +17,7 @@ function HomeSideMenu() {
     let map = new kakao.maps.Map(container, options);
     setTest(map);
   }, []);
+
   function searchPlaces() {
     let ps = new kakao.maps.services.Places();
     let keyword: any = document.getElementById('keyword');
@@ -44,9 +45,7 @@ function HomeSideMenu() {
   function displayPlaces(places: any) {
     console.log('displayPlaces');
     let bounds = new kakao.maps.LatLngBounds();
-    // let container = document.getElementById('map');
-    // let map = new kakao.maps.Map(container, options);
-    for (var i = 0; i < places.length; i++) {
+    for (let i = 0; i < places.length; i++) {
       // 마커를 생성하고 지도에 표시합니다
       let placePosition = new kakao.maps.LatLng(places[i].y, places[i].x);
       console.log(placePosition);
@@ -81,6 +80,13 @@ const SearchListWrapper = styled.div`
   overflow-y: auto;
 `;
 
+const SideMenuHeader = styled.header`
+  border: none;
+  background-color: #e7f5ff;
+  height: 150px;
+  padding: 0 20px;
+`;
+
 const SideMenuWrapper = styled.div`
   border: none;
   background-color: #f8f9fa;
@@ -91,12 +97,4 @@ const SideMenuWrapper = styled.div`
   text-align: center;
   z-index: 999;
 `;
-
-const SideMenuHeader = styled.header`
-  border: none;
-  background-color: #ffdeeb;
-  height: 150px;
-  padding: 0 20px;
-`;
-
 export default HomeSideMenu;

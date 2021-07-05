@@ -6,11 +6,18 @@ function HomeSearchList({ searchPlaceList }: any) {
       {searchPlaceList
         ? searchPlaceList.map((data: any) => (
             <PlaceListBoxWrapper id='placesList'>
-              <li>{data.place_name}</li>
-              <li>{data.address_name}</li>
-              <li>{data.phone}</li>
-              <li>{data.place_url}</li>
-              <li>{data.road_address_name}</li>
+              <PlaceListBoxTitle>
+                {data.place_name ? data.place_name : null}
+              </PlaceListBoxTitle>
+              <PlaceListBoxAddress>
+                {data.address_name ? data.address_name : null}
+              </PlaceListBoxAddress>
+              <PlaceListBoxPhone>
+                {data.phone ? data.phone : null}
+              </PlaceListBoxPhone>
+              <PlaceListBoxUrl>
+                {data.place_url ? data.place_url : null}
+              </PlaceListBoxUrl>
             </PlaceListBoxWrapper>
           ))
         : null}
@@ -20,9 +27,24 @@ function HomeSearchList({ searchPlaceList }: any) {
 }
 
 const PlaceListBoxWrapper = styled.ul`
-  border: 1px solid coral;
-  border-radius: 5px;
+  border-bottom: 1px solid #e1e1e1;
   margin: 20px auto;
+  padding-bottom: 20px;
+  line-height: 1.5;
+`;
+
+const PlaceListBoxTitle = styled.li`
+  font-weight: bold;
+`;
+
+const PlaceListBoxAddress = styled.li`
+  font-size: 0.8em;
+`;
+const PlaceListBoxPhone = styled.li`
+  font-size: 0.8em;
+`;
+const PlaceListBoxUrl = styled.li`
+  font-size: 0.8em;
 `;
 
 export default HomeSearchList;
